@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "name": "Samsung S24",
+        "category": "Electronics",
+        "price": "580$",
+        "imageUrl": "/assets/imeges/samsung_s24.webp",
+        "description": "Experience next-generation mobile technology. Stunning OLED display and powerful processor.",
+        "reviews": [
+            { "author": "Alex", "rating": 5, "text": "Great phone!" },
+            { "author": "Maria", "rating": 4, "text": "The camera could be better." }
+        ]
+    },
+    {
+        "id":2,
+        "name": "HP Laptop 17-B22CQEA",
+        "category": "Electronics",
+        "price": "604$"
+        
+    }
+]

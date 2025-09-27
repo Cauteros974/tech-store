@@ -15,7 +15,12 @@
         "id":2,
         "name": "HP Laptop 17-B22CQEA",
         "category": "Electronics",
-        "price": "604$"
-        
+        "price": "604$",
+        "imageUrl":"/assets/imeges/HP_laptop.webp",
+        "description": "Conquer new heights every day. A stylish and reliable laptop for work, study and entertainment",
+        "reviews": [
+            {"author": "David", "rating": 5, "text": "I bought a laptop. I am satisfied, it is modern and convenient for work."},
+            {"author": "Sophia", "rating": 5, "text": "I bought this laptop recently and am very happy with the purchase. I chose it specifically for work."}
+        ]
     }
 ]

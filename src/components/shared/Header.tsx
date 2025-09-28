@@ -18,6 +18,19 @@ const Header = () => {
                     <Link to="/" className="text-gray-600 hover:text-blue-500">Main</Link>
                     <Link to="/catalog" className="text-gray-600 hover:text-blue-500">Catalog</Link>
                 </div>
+
+                <Link to="/cart" className="relative">
+                <ShoppingCart className="h-7 w-7 text-gray-600" />
+                {totalItems > 0 && (
+                    <motion.span
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold"
+                    >
+                        {totalItems}
+                    </motion.span>
+                )}
+                </Link>
             </nav>
         </header>
     )

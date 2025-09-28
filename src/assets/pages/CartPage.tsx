@@ -54,10 +54,15 @@ const CartPage = () => {
                         <span>Sum: </span>
                         <span> ${totalPrice.toFixed(2)}</span>
                     </div>
+                    <Link to="/checkout" className="block-mt-6">
+                        <button className="w-full bg-green-500 text-white py-3 rounded hover: bg-green-600 text-lg font-semibold">
+                            Place an Order
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default CartPage;

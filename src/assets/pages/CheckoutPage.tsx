@@ -10,8 +10,8 @@ type FormValues = {
 };
 
 const CheckoutPage = () => {
-    const { register, handleSubmit, formState: { errors,} } = useForm<FormValues>();
-    const {items, clearCart} = useCartStore();
+    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
+    const { items, clearCart } = useCartStore();
     const navigate = useNavigate();
 
     const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);

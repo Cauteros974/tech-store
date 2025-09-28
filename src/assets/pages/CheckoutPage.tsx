@@ -1,4 +1,5 @@
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import type { SubmitHandler } from 'react-hook-form';
 import { useCartStore } from '../../store/cartStore';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ const CheckoutPage = () => {
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     if (items.length === 0) {
-        alert("Ваша корзина пуста!");
+        alert("Your cart is empty!");
         navigate('/catalog');
         return;
     }
@@ -40,30 +41,30 @@ const CheckoutPage = () => {
 
   return (
     <div className="max-w-xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Оформление заказа</h1>
+      <h1 className="text-3xl font-bold mb-6">Placing an order</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-white p-8 rounded-lg shadow-md">
         <div>
-          <label className="block font-medium">ФИО</label>
-          <input {...register('name', { required: 'Это поле обязательно' })} className="w-full p-2 border rounded mt-1" />
+          <label className="block font-medium">Full name</label>
+          <input {...register('name', { required: 'This field is required' })} className="w-full p-2 border rounded mt-1" />
           {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
         </div>
         <div>
           <label className="block font-medium">Email</label>
-          <input type="email" {...register('email', { required: 'Email обязателен', pattern: /^\S+@\S+$/i })} className="w-full p-2 border rounded mt-1" />
-          {errors.email && <p className="text-red-500 text-sm mt-1">Введите корректный email</p>}
+          <input type="email" {...register('email', { required: 'Email is required', pattern: /^\S+@\S+$/i })} className="w-full p-2 border rounded mt-1" />
+          {errors.email && <p className="text-red-500 text-sm mt-1">Please enter a valid email address.</p>}
         </div>
         <div>
-          <label className="block font-medium">Адрес доставки</label>
-          <input {...register('address', { required: 'Это поле обязательно' })} className="w-full p-2 border rounded mt-1" />
+          <label className="block font-medium">Delivery address</label>
+          <input {...register('address', { required: 'This field is required' })} className="w-full p-2 border rounded mt-1" />
           {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>}
         </div>
         <div>
-          <label className="block font-medium">Телефон</label>
-          <input type="tel" {...register('phone', { required: 'Это поле обязательно' })} className="w-full p-2 border rounded mt-1" />
+          <label className="block font-medium">Telephone</label>
+          <input type="tel" {...register('phone', { required: 'This field is required' })} className="w-full p-2 border rounded mt-1" />
           {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
         </div>
         <button type="submit" className="w-full bg-blue-500 text-white py-3 rounded hover:bg-blue-600 text-lg font-semibold">
-          Подтвердить заказ на ${totalPrice.toFixed(2)}
+            Confirm order on ${totalPrice.toFixed(2)}
         </button>
       </form>
     </div>

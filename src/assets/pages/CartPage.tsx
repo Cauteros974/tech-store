@@ -46,6 +46,16 @@ const CartPage = () => {
                   </div>
                 ))}
             </div>
+
+            <div className="mt-8 flex justify-end">
+                <div className="w-full max-w-sm bg-gray-50 p-6 router-lg">
+                    <h2 className="text-2xl font-bold mb-4">Total</h2>
+                    <div className="flex justify-between font-bold text-xl">
+                        <span>Sum: </span>
+                        <span> ${totalPrice.toFixed(2)}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 };

@@ -33,7 +33,7 @@ const Header = () => {
                 </Link>
             </nav>
         </header>
-    )
+    );
 };
 
 export default  Header;

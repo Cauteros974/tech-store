@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
-import { Product, useCartStore } from '../../store/cartStore';
+import type { Product } from '../../store/cartStore';
+import { useCartStore } from '../../store/cartStore';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -39,8 +40,7 @@ const CatalogPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('Все');
   const [sortOrder, setSortOrder] = useState('price-asc');
-
-  // Загружаем товары при первом рендере
+  
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get<Product[]>('/products.json');
@@ -49,7 +49,6 @@ const CatalogPage = () => {
     fetchProducts();
   }, []);
 
-  // Фильтруем и сортируем товары
   const filteredAndSortedProducts = useMemo(() => {
     return products
       .filter((p) => p.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -60,14 +59,12 @@ const CatalogPage = () => {
         return 0;
       });
   }, [products, searchTerm, category, sortOrder]);
-  
-  // Получаем уникальные категории для фильтра
+
   const categories = useMemo(() => ['Все', ...new Set(products.map(p => p.category))], [products]);
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">Каталог товаров</h1>
-      {/* Панель фильтров */}
+      <h1 className="text-3xl font-bold mb-6">Product catalog</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 p-4 bg-gray-50 rounded-lg">
           <input
             type="text"
@@ -79,12 +76,11 @@ const CatalogPage = () => {
             {categories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
           </select>
           <select className="p-2 border rounded w-full" onChange={(e) => setSortOrder(e.target.value)}>
-            <option value="price-asc">Цена: по возрастанию</option>
-            <option value="price-desc">Цена: по убыванию</option>
+            <option value="price-asc">Price: ascending</option>
+            <option value="price-desc">Price: descending</option>
           </select>
       </div>
-
-      {/* Сетка товаров */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredAndSortedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />

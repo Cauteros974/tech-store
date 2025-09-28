@@ -13,6 +13,8 @@ const CheckoutPage = () => {
     const { register, handleSubmit, formState: { errors,} } = useForm<FormValues>();
     const {items, clearCart} = useCartStore();
     const navigate = useNavigate();
+
+    const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
 };
 
 export default CheckoutPage;

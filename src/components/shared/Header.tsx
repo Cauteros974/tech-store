@@ -20,6 +20,10 @@ const Header = () => {
                     Tach<span className="text-gray-800">Sphere</span>
                 </Link>
 
+                <div className="hidden md:flex items-center gap-6 text-md font-medium">
+                    <Link to="/category/TV" className=""></Link>
+                </div>
+
                 <div className="flex items-center gap-6 text-lg">
                     <Link to="/" className="text-gray-600 hover:text-blue-500">Main</Link>
                     <Link to="/catalog" className="text-gray-600 hover:text-blue-500">Catalog</Link>

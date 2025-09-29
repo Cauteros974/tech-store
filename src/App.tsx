@@ -1,25 +1,30 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/shared/Header';
-import CheckoutPage from './assets/pages/CheckoutPage';
-import CatalogPage from './assets/pages/CatalogPage';
-import CartPage from './assets/pages/CartPage';
-
+import Layout from './components/shared/Layout';
+import HomePage from './pages/HomePage';
+import CategoryPage from './pages/CategoryPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import ProtectedRoute from './components/shared/ProtectedRoute';
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
-          <Routes>
-          
-            <Route path="/catalog" element={<CatalogPage />} />
-            
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-          </Routes>
-        </main>
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="category/:categoryName" element={<CategoryPage />} />
+          <Route path="product/:id" element={<ProductDetailPage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="checkout" element={<CheckoutPage />} />
+          </Route>
+        </Route>
+      </Routes>
     </Router>
   );
 }

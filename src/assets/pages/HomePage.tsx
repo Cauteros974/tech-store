@@ -20,6 +20,16 @@ const HomePage = () => (
         >
             Your world of cutting-edge technology. Discover the best TVs, laptops, and computers.
         </motion.p>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-8"
+        >
+            <Link to="/category/Laptop" className="bg-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-600 transition-colors">
+            Go to catalog
+            </Link>
+        </motion.div>
     </div>
 );
 

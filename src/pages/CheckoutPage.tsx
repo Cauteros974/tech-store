@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
-import { useCartStore } from '../../store/cartStore';
+import { useCartStore } from '../store/cartStore';
 import { useNavigate } from 'react-router-dom';
 
 type FormValues = {

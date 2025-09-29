@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
-import type { Product } from '../../store/cartStore';
-import { useCartStore } from '../../store/cartStore';
+import type { Product } from '../store/cartStore';
+import { useCartStore } from '../store/cartStore';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 

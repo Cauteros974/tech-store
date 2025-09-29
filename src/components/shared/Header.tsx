@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { ShoppingCart } from 'lucide-react';
-import { useCartStore } from '../../store/cartStore';
-import { motion } from 'framer-motion';
+import { ShoppingCart, Menu, X } from 'lucide-react';
+import { useAuthStore } from '../../store/authStore';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
     const items = useCartStore((state) => state.items);

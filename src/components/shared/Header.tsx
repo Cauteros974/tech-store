@@ -63,6 +63,21 @@ const Header = () => {
                     {isMobileMenuOpen ? <X /> : <Menu />}
                 </button>
             </nav>
+
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="md:hidden bg-white border-t"
+                    >
+                        <div className="flex flex-col items-center gap-4 py-4">
+                            
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
            
     );

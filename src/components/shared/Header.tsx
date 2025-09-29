@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
-    const items = useCartStore((state) => state.items);
-    const totalItems = items.reduce((total, item) => total + item.quantity, 0);
+    const { user } = useAuthStore();
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return(
         <header className="bg-white shadow-md sticky top-0 z-50">

@@ -73,7 +73,16 @@ const Header = () => {
                         className="md:hidden bg-white border-t"
                     >
                         <div className="flex flex-col items-center gap-4 py-4">
-                            
+                        {navLinks.map((link) => (
+                            <NavLink key={link.name} to={link.path} onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium">{link.name}</NavLink>
+                        ))}
+                        <hr className="w-1/2 my-2">
+                        {user ? (
+                            <button onClick={() => auth.signOut()} className="text-gray-700 font-medium">Выйти</button>
+                        ) : (
+                        <Link to="/login" onClick={() => setMobileMenuOpen(false)} className="bg-primary text-white px-6 py-2 rounded-lg font-semibold">Войти</Link>
+                        )}
+                        </hr>
                         </div>
                     </motion.div>
                 )}

@@ -41,6 +41,20 @@ const Header = () => {
                                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">{totalItems}</span>
                             )}
                     </Link>
+
+                    <div className="hidden md:flex items-center gap2">
+                        { user ? (
+                            <div className="relative group">
+                            <button className="p-2 hover:bg-gray-100 rounded-full"><User /></button>
+                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                              <span className="block px-4 py-2 text-sm text-gray-700">{user.email}</span>
+                              <button onClick={() => auth.signOut()} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Выйти</button>
+                            </div>
+                          </div>
+                        ):(
+                            <Link to="/login" className="bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-sm"></Link>
+                        )}
+                    </div>
                 </div>
             </nav>
         </header>

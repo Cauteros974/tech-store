@@ -26,7 +26,15 @@ const Header = () => {
                     Tech<span className="text-gray-800">Sphere</span>       
                 </Link>
 
-                
+                <div className="hidden md:flex items-center gap-6 text-md font-medium">
+                    {navLinks.map((link) => (
+                        <NavLink key={link.name} to={link.path} className={({ isActive }) => 
+                            `pb-1 border-b-2 ${isActive ? 'border-primary text-primary' : 'border-transparent text-gray-600 hover:text-primary'}`
+                          }>
+                            {link.name}
+                        </NavLink>
+                    ))}
+                </div>
             </nav>
         </div>
     )

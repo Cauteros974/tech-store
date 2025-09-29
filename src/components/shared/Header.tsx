@@ -23,6 +23,16 @@ const Header = () => {
         <header className="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
             <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <Link to="/" className="text-2xl font-extrabold text-primary">Tech<span className="text-gray-800">Sphere</span></Link>
+
+                <div className="hidden md:flex items-center gap-6 text-md font-medium">
+                    {navLinks.map((link) => (
+                        <NavLink key={link.name} to={link.path} className={({ isActive }) => 
+                            `pb-1 border-b-2 ${isActive ? 'border-primary text-primary' : 'border-transparent text-gray-600 hover:text-primary'}`
+                        }>
+                            {link.name}
+                        </NavLink>
+                    ))}
+                </div>
             </nav>
         </header>
            

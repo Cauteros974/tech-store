@@ -30,7 +30,7 @@ const Header = () => {
                     {navLinks.map((link) => (
                         <NavLink key={link.name} to={link.path} className={({ isActive }) => 
                             `pb-1 border-b-2 ${isActive ? 'border-primary text-primary' : 'border-transparent text-gray-600 hover:text-primary'}`
-                          }>
+                        }>
                             {link.name}
                         </NavLink>
                     ))}

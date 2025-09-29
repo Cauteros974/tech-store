@@ -52,10 +52,16 @@ const Header = () => {
                             </div>
                           </div>
                         ):(
-                            <Link to="/login" className="bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-sm"></Link>
+                            <Link to="/login" className="bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-sm">
+                                LogIn
+                            </Link>
                         )}
                     </div>
                 </div>
+
+                <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden z-50 p-2">
+                    {isMobileMenuOpen ? <X /> : <Menu />}
+                </button>
             </nav>
         </header>
            

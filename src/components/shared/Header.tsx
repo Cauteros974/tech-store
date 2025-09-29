@@ -8,11 +8,16 @@ const Header = () => {
     const { user } = useAuthStore();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+    const mobileMenuVariants = {
+        hidden: { opacity: 0, y: -20},
+        visible: { opacity: 1, y: 1},
+    };
+
     return(
         <header className="bg-white shadow-md sticky top-0 z-50">
             <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <Link to= "/" className="text-2xl font-bold text-gray-800">
-                    Tech-Store
+                    Tach<span className="text-gray-800">Sphere</span>
                 </Link>
 
                 <div className="flex items-center gap-6 text-lg">

@@ -1,10 +1,10 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Product } from "../store/cartStore";
 import { ProductCard } from "../components/products/ProductCard";
 import { motion } from "framer-motion";
-import { set } from "react-hook-form";
+
 
 const CategoryPage = () => {
     const { categoryName } = useParams <{ categoryName: string }>();

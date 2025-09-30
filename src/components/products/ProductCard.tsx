@@ -16,9 +16,20 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
 
     return(
-        <motion.div 
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col">
-            variant = {itemVariants}
+        <motion.div
+            variants={itemVariants}
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col"
+        >
+            <Link to={`/product/${product.id}`} className="block flex-grow">
+            <div className="overflow-hidden relative">
+                <img 
+                    src={product.imageUrl} 
+                    alt={product.name} 
+                    className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <span className="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">{product.name}</span>
+            </div>
+            </Link>
         </motion.div>
     )
 }

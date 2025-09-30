@@ -41,8 +41,24 @@ const CategoryPage = () => {
     };
 
     return(
-        
-    )
+        <div>
+            <h1 className="text-3xl font-bold mb-8">Category: {categoryName}</h1>
+            {products.length > 0 ? (
+                <motion.div
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+               >
+                    {products.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
+                </motion.div>
+            ) : (
+                <p className="text-center py-10 text-gray-600">There are no products in this category yet.</p>
+            )}
+        </div>
+    );
 };
 
 export default  CategoryPage;

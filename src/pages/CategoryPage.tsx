@@ -24,8 +24,25 @@ const CategoryPage = () => {
             } finally{
                 setLoading(false);
             }
-        }
-    })
+        };
+        fetchProducts();
+    }, [categoryName]);
+
+    if(loading) {
+        return <div className="text-center py-10">Loading goods...</div>
+    }
+
+    const containerVariants = {
+        hidden: { opacity: 0},
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.07},
+        },
+    };
+
+    return(
+        
+    )
 };
 
 export default  CategoryPage;

@@ -6,6 +6,12 @@
         "price": 580,
         "image": "/images/samsung_galaxy_s24.png",
         "description": "Experience next-generation mobile technology. Stunning OLED display and powerful processor.",
+        "specifications": {
+            "Display": "6,2",
+            "Processor": "Exynos 2400",
+            "Camera": "50+10+12 Мp",
+            "Battery": "4000 mAh"
+        },
         "reviews": [
             { "author": "Alex", "rating": 5, "text": "Great phone!" },
             { "author": "Maria", "rating": 4, "text": "The camera could be better." }
@@ -18,6 +24,12 @@
         "price": 604,
         "image":"/images/HP_laptop.webp",
         "description": "Conquer new heights every day. A stylish and reliable laptop for work, study and entertainment",
+        "specifications": {
+            "Display": "17.3",
+            "Processor": "AMD Ryzen 5 7520U",
+            "Camera": "720p HD",
+            "RAM": "16Gb DDR5"
+        },
         "reviews": [
             {"author": "David", "rating": 5, "text": "I bought a laptop. I am satisfied, it is modern and convenient for work."},
             {"author": "Sophia", "rating": 5, "text": "I bought this laptop recently and am very happy with the purchase. I chose it specifically for work."}

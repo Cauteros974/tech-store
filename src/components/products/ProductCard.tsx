@@ -29,6 +29,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 />
                 <span className="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">{product.name}</span>
             </div>
+            <div className="p-4">
+                <h3 className="font-bold text-lg truncate mt-1 text-gray-800">{product.name}</h3>
+                <p className="text-2xl font-extrabold mt-2 text-gray-900">${product.price.toFixed(2)}</p>
+            </div>
             </Link>
         </motion.div>
     )

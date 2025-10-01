@@ -8,4 +8,13 @@ const LoginPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const [ firebaseError, setFirebaseError] = useState();
+
+    const onSubmit = async ( data ) => {
+        try {
+            await signInWithEmailAndPassword(auth, data.email, data.password);
+            navigate('/');
+        } catch(error) {
+            setFirebaseError("Wrong Email or Password. Try again");
+        }
+    }
 }

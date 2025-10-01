@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Product } from "../store/cartStore";
-import { ProductCard } from "../components/products/ProductCard";
+import { type Product } from "../store/cartStore";
+import ProductCard  from "../components/products/ProductCard";
 import { motion } from "framer-motion";
 
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { Product, useCartStore } from "../../store/cartStore";
+import { type Product, useCartStore } from "../store/cartStore";
 import { Star, ShoppingCart } from 'lucide-react';
 import { motion } from 'framer-motion';
 

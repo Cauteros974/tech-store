@@ -37,6 +37,19 @@ const ProductDetailPage = () => {
           };
           fetchProduct();
     }, [id]);
+
+    if (loading) {
+        return <div className="text-center py-20">Загрузка...</div>;
+    }
+
+    if (!product) {
+        <div className="text-center py-20">
+            <h2 className="text-2xl font-bold">Product not found</h2>
+            <Link to="/" className="text-primary hover:underline mt-4 inline-block">
+                Return to the main page
+            </Link>
+        </div>
+    }
 };
 
 export default ProductDetailPage;

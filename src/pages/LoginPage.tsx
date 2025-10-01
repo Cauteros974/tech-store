@@ -37,7 +37,12 @@ const LoginPage = () => {
                         LogIn
                     </button>
                 </form>
+                <p className="text-center mt-4 text-sm">
+                    Don't have an account? <Link to = '/register' className="text-primary hover:underline"> Registration </Link>
+                </p>
             </div>
         </div>
-    )
-}
+    );
+};
+
+export default  LoginPage;

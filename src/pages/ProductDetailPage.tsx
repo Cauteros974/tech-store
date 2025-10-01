@@ -43,12 +43,15 @@ const ProductDetailPage = () => {
     }
 
     if (!product) {
-        <div className="text-center py-20">
-            <h2 className="text-2xl font-bold">Product not found</h2>
-            <Link to="/" className="text-primary hover:underline mt-4 inline-block">
-                Return to the main page
-            </Link>
-        </div>
+        return(
+            <div className="text-center py-20">
+                <h2 className="text-2xl font-bold">Product not found</h2>
+                <Link to="/" className="text-primary hover:underline mt-4 inline-block">
+                    Return to the main page
+                </Link>
+            </div>
+        );
+        
     }
 };
 

@@ -5,6 +5,7 @@ import { useAuthStore } from '../../store/authStore';
 import { useCartStore } from '../../store/cartStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { auth } from '../../firebase';
+import styles from './Header.module.css';
 
 const Header = () => {
   const { user } = useAuthStore();

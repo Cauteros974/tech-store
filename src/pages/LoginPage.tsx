@@ -1,7 +1,7 @@
-import { useForm } from "react-hook-form";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useForm } from 'react-hook-form';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const handleLogin = async ( data ) => {
     try {

@@ -7,5 +7,7 @@ const handleLogin = async ( data ) => {
     try {
         await signInWithEmailAndPassword(auth, data.email, data.password);
         navigate('/');
+    } catch( error ){
+        console.log("Login Error", error);
     }
-}
+};

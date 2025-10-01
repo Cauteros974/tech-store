@@ -31,6 +31,11 @@ const LoginPage = () => {
                         <label className="block font-medium">Password</label>
                         <input type="password" {...register('password', { required: true })} className="w-full p-2 border rounded mt-1" />
                     </div>
+
+                    {firebaseError && <p className="text-red-500 text-sm">{firebaseError}</p>}
+                    <button type="submit" className="w-full bg-primary text-white py-2 rounded-lg font-semibold hover:bg-blue-600">
+                        LogIn
+                    </button>
                 </form>
             </div>
         </div>

@@ -21,4 +21,22 @@ const ProductDetailPage = () => {
     const [ product, setProduct] = useState<ProductWithDetails | null>(null);
     const [loading, setLoading] = useState(true);
     const addToCart = useCartStore((state) => state.addToCart);
-}
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+              setLoading(true);
+              const { data } = await axios.get<ProductWithDetails[]>('/products.json');
+              const foundProduct = data.find((p) => p.id === parseInt(id || ''));
+              setProduct(foundProduct || null);
+            } catch (error) {
+              console.error("Error when loading goods:", error);
+            } finally {
+              setLoading(false);
+            }
+          };
+          fetchProduct();
+    }, [id]);
+};
+
+export default ProductDetailPage;

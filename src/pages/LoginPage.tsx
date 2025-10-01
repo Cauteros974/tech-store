@@ -14,7 +14,7 @@ const LoginPage = () => {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       navigate('/');
     } catch (error) {
-      setFirebaseError("Неверный email или пароль. Попробуйте снова.");
+      setFirebaseError("Invalid email or password. Try again.");
     }
   };
 
@@ -22,6 +22,16 @@ const LoginPage = () => {
         <div className="flex justify-center items-center">
             <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
                 <h2 className="text-2xl font-bold text-center mb-6"> LogIn in TechSphere</h2>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                    <div>
+                        <label className="block font-medium">Email</label>
+                        <input type="email" {...register('email', { required: true })} className="w-full p-2 border rounded mt-1" />
+                    </div>
+                    <div>
+                        <label className="block font-medium">Password</label>
+                        <input type="password" {...register('password', { required: true })} className="w-full p-2 border rounded mt-1" />
+                    </div>
+                </form>
             </div>
         </div>
     )

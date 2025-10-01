@@ -28,3 +28,40 @@
     display: none;
     gap: 1.5rem;
 }
+
+.navLink {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color-light);
+    transition: color 0.2s ease-in-out;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+  
+.navLink:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
+  
+.activeLink {
+    composes: navLink;
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+  
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.iconButton {
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+  
+.iconButton:hover {
+    background-color: #f0f0f0;
+}
+

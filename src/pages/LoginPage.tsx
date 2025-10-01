@@ -14,7 +14,15 @@ const LoginPage = () => {
             await signInWithEmailAndPassword(auth, data.email, data.password);
             navigate('/');
         } catch(error) {
-            setFirebaseError("Wrong Email or Password. Try again");
+            setFirebaseError("Invalid email or password. Try again.");
         }
-    }
+    };
+
+    return(
+        <div className="flex justify-center items-center">
+            <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+                <h2 className="text-2xl font-bold text-center mb-6"> LogIn in TechSphere</h2>
+            </div>
+        </div>
+    )
 }

@@ -14,7 +14,7 @@ export interface CartItem extends Product {
   quantity: number;
 }
 
-interface CartState {
+export interface CartState {
   items: CartItem[];
   addToCart: (product: Product) => void;
   removeFromCart: (productId: number) => void;

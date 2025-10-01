@@ -36,3 +36,22 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { type Product, useCartStore } from "../../store/cartStore";
-import styles from './ProductCard.module.css';
+import styles from "./ProductCard.module.css";
 interface ProductCardProps {
     product: Product;
 }

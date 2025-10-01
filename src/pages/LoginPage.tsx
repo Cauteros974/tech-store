@@ -9,14 +9,14 @@ const LoginPage = () => {
     const navigate = useNavigate();
     const [ firebaseError, setFirebaseError] = useState();
 
-    const onSubmit = async ( data ) => {
-        try {
-            await signInWithEmailAndPassword(auth, data.email, data.password);
-            navigate('/');
-        } catch(error) {
-            setFirebaseError("Invalid email or password. Try again.");
-        }
-    };
+    const onSubmit = async (data) => {
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      navigate('/');
+    } catch (error) {
+      setFirebaseError("Неверный email или пароль. Попробуйте снова.");
+    }
+  };
 
     return(
         <div className="flex justify-center items-center">

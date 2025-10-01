@@ -13,3 +13,18 @@
     align-items: center;
     height: 70px;
 }
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+  
+.logoSpan {
+    color: var(--text-color);
+}
+  
+.desktopMenu {
+    display: none;
+    gap: 1.5rem;
+}

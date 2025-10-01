@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Product, useCartStore } from "../../store/cartStore";
-
 interface ProductCardProps {
     product: Product;
 }

@@ -38,10 +38,10 @@ const ProductCard = ({ product }: { product: Product }) => {
   );
 };
 
-const CatalogPage = () => {
+const CatalogPage = ({ product }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [category, setCategory] = useState('Все');
+  const [category, setCategory] = useState('All');
   const [sortOrder, setSortOrder] = useState('price-asc');
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const CatalogPage = () => {
   }, [products, searchTerm, category, sortOrder]);
 
   const categories = useMemo(
-    () => ['Все', ...new Set(products.map((p) => p.category))],
+    () => ['All', ...new Set(products.map((p) => p.category))],
     [products]
   );
 

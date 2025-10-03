@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { type Product, useCartStore } from "../../store/cartStore";
+import styles from '../products/ProductCard.module.css';
 
 interface ProductCardProps {
   product: Product;
@@ -15,6 +16,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const addToCart = useCartStore((state) => state.addToCart);
 
   return (
+    <header className={styles.header}>
     <motion.div
       variants={itemVariants}
       className="bg-white rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 group flex flex-col"
@@ -48,6 +50,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </button>
       </div>
     </motion.div>
+    </header>
   );
 };
 

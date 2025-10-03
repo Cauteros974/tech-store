@@ -5,6 +5,7 @@ import { useAuthStore } from '../../store/authStore';
 import { useCartStore } from '../../store/cartStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { auth } from '../../firebase';
+import styles from './Header.module.css';
 
 const Header = () => {
   const { user } = useAuthStore();
@@ -20,6 +21,7 @@ const Header = () => {
   ];
 
   return (
+    <header className={styles.header}>
     <header className="bg-white/90 backdrop-blur-md border-b shadow-sm sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-extrabold text-blue-600">
@@ -134,6 +136,7 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
+    </header>
     </header>
   );
 };

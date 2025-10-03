@@ -1,64 +1,41 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { type Product } from "../store/cartStore";
-import ProductCard  from "../components/products/ProductCard";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { type Product, useCartStore } from "../store/cartStore";
 
+const ProductCard = ({ product }: { product: Product }) => {
+  const addToCart = useCartStore((state) => state.addToCart);
 
-const CategoryPage = () => {
-    const { categoryName } = useParams <{ categoryName: string }>();
-    const [ products, setProducts ] = useState<Product[]>([]);
-    const [ loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            setLoading(true);
-            try {
-                const { data } = await axios.get<Product[]>('/products.json')
-
-                const filtered = data.filter(p => p.category === categoryName);
-                setProducts(filtered);
-            } catch (error) {
-                console.log("Error for loading items: ", error);
-            } finally{
-                setLoading(false);
-            }
-        };
-        fetchProducts();
-    }, [categoryName]);
-
-    if(loading) {
-        return <div className="text-center py-10">Loading goods...</div>
-    }
-
-    const containerVariants = {
-        hidden: { opacity: 0},
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.07},
-        },
-    };
-
-    return(
-        <div>
-            <h1 className="text-3xl font-bold mb-8">Category: {categoryName}</h1>
-            {products.length > 0 ? (
-                <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-               >
-                    {products.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                    ))}
-                </motion.div>
-            ) : (
-                <p className="text-center py-10 text-gray-600">There are no products in this category yet.</p>
-            )}
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
+    >
+      <Link to={`/product/${product.id}`} className="flex-grow">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-56 object-cover"
+        />
+        <div className="p-4">
+          <h3 className="text-lg font-semibold truncate">{product.name}</h3>
+          <p className="text-gray-500">{product.category}</p>
+          <p className="text-xl font-bold mt-2">
+            ${product.price.toFixed(2)}
+          </p>
         </div>
-    );
+      </Link>
+      <div className="p-4 pt-0 mt-auto">
+        <button
+          onClick={() => addToCart(product)}
+          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors font-semibold"
+        >
+          Add to cart
+        </button>
+      </div>
+    </motion.div>
+  );
 };
 
-export default  CategoryPage;
+export default ProductCard;

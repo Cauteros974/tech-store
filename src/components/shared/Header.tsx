@@ -26,6 +26,11 @@ const Header = () => {
         <Link to="/" className="text-2xl font-extrabold text-primary">
           Tech<span className="text-gray-800">Sphere</span>
         </Link>
+
+        <div className={styles.desktopMenu}>
+          <NavLink to="/category/Laptops" className={({isActive}) => isActive ? styles.activeLink : styles.navLink}>Laptops</NavLink>
+          <NavLink to="/category/Computers" className={({isActive}) => isActive ? styles.activeLink : styles.navLink}>Computers</NavLink>
+        </div>
         
         <div className="hidden md:flex items-center gap-6 text-md font-medium">
           {navLinks.map((link) => (

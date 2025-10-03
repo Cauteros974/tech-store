@@ -76,7 +76,7 @@ const CatalogPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 p-4 bg-gray-50 rounded-lg">
         <input
           type="text"
-          placeholder="Поиск по названию..."
+          placeholder="Search by name..."
           className="p-2 border rounded w-full"
           onChange={(e) => setSearchTerm(e.target.value)}
         />

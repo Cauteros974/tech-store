@@ -19,7 +19,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [firebaseError, setFirebaseError] = useState("");
   const [loading, setLoading] = useState(false);
-  
+
   const onSubmit = async (data: LoginFormInputs) => {
     try {
       setLoading(true);
@@ -48,9 +48,9 @@ const LoginPage = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-center mb-6">
-          LogIn in TechSphere
+          Log in to <span className="text-primary">TechSphere</span>
         </h2>
-        
+
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
             <label className="block font-medium">Email</label>
@@ -69,7 +69,7 @@ const LoginPage = () => {
               <p className="text-red-500 text-sm">{errors.email.message}</p>
             )}
           </div>
-          
+
           <div>
             <label className="block font-medium">Password</label>
             <input
@@ -87,24 +87,24 @@ const LoginPage = () => {
               <p className="text-red-500 text-sm">{errors.password.message}</p>
             )}
           </div>
-          
+
           {firebaseError && (
             <p className="text-red-500 text-sm">{firebaseError}</p>
           )}
-          
+
           <button
             type="submit"
             disabled={loading}
             className="w-full bg-primary text-white py-2 rounded-lg font-semibold hover:bg-blue-600 disabled:opacity-50"
           >
-            {loading ? "Logging in..." : "LogIn"}
+            {loading ? "Logging in..." : "Log In"}
           </button>
         </form>
-        
+
         <p className="text-center mt-4 text-sm">
           Don&apos;t have an account?{" "}
           <Link to="/register" className="text-primary hover:underline">
-            Registration
+            Register
           </Link>
         </p>
       </div>
